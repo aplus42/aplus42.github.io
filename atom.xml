@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>张望</title>
+  
+  <subtitle>记录现在，展望未来</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2025-01-26T06:26:08.391Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>FutureZ</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为什么我又把博客搭建了起来？</title>
+    <link href="http://example.com/2025/01/27/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%98%E7%94%A8%E5%8D%9A%E5%AE%A2%EF%BC%9F/"/>
+    <id>http://example.com/2025/01/27/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%98%E7%94%A8%E5%8D%9A%E5%AE%A2%EF%BC%9F/</id>
+    <published>2025-01-27T00:00:00.000Z</published>
+    <updated>2025-01-26T06:26:08.391Z</updated>
+    
+    <content type="html"><![CDATA[<p>现在各种媒体那么多，为什么我又把博客搭建来起来。主要是基于以下的思考：</p><ol><li>媒体速度转换快，各种信息非常的分数，如果需要一个完全属于自己的一个阵地的话还得是博客，可以完成的记录自己想发的东西。</li><li>各个平台有审核机制，还是自己的博客最靠谱。</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;现在各种媒体那么多，为什么我又把博客搭建来起来。主要是基于以下的思考：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;媒体速度转换快，各种信息非常的分数，如果需要一个完全属于自己的一个阵地的话还得是博客，可以完成的记录自己想发的东西。&lt;/li&gt;
+&lt;li&gt;各个平台有审核机制，还是自己的博客最靠谱</summary>
+      
+    
+    
+    
+    <category term="说说" scheme="http://example.com/categories/%E8%AF%B4%E8%AF%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>博客搭建：hexo使用next主题新增RSS</title>
+    <link href="http://example.com/2025/01/26/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%9Ahexo%E4%BD%BF%E7%94%A8next%E4%B8%BB%E9%A2%98%E6%96%B0%E5%A2%9ERSS/"/>
+    <id>http://example.com/2025/01/26/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%9Ahexo%E4%BD%BF%E7%94%A8next%E4%B8%BB%E9%A2%98%E6%96%B0%E5%A2%9ERSS/</id>
+    <published>2025-01-26T06:26:08.391Z</published>
+    <updated>2025-01-26T06:26:08.391Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>在next下的_config.yml配置中新增</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sidebar_rss: </span><br><span class="line">text: RSS </span><br><span class="line">icon: fa fa-rss </span><br><span class="line">color: burlywood </span><br><span class="line">link: atom.xml</span><br></pre></td></tr></table></figure></li><li><p>找到next&#x2F;layout&#x2F;_partials&#x2F;sidebar&#x2F;site-overview.swig文件，在社交判断板块下新增以下代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if theme.sidebar_rss %&#125;</span><br><span class="line">  &lt;div class=&quot;&quot; &gt;</span><br><span class="line">  &lt;a target=&quot;_blank&quot; class=&quot;social-link&quot; href=&quot;&#123;&#123; url_for(theme.sidebar_rss.link) &#125;&#125;&quot; style=&quot;color: &#123;&#123; theme.sidebar_rss.color &#125;&#125;;&quot;&gt;</span><br><span class="line">      &lt;span class=&quot;icon&quot;&gt;</span><br><span class="line">        &lt;i class=&quot;&#123;&#123; theme.sidebar_rss.icon &#125;&#125;&quot;&gt;&lt;/i&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">      &lt;span class=&quot;label&quot;&gt;&#123;&#123; theme.sidebar_rss.text &#125;&#125;&lt;/span&gt;</span><br><span class="line">    &lt;/a&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure></li><li><p>在博客目录下安装<code>npm install hexo-generator-feed --save</code>，编译时就会生成atom.xml文件。</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在next下的_config.yml配置中新增&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;b</summary>
+      
+    
+    
+    
+    
+    <category term="博客" scheme="http://example.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为什么版权越来越规矩，歌曲却越来越不火了</title>
+    <link href="http://example.com/2025/01/26/%E4%B8%BA%E4%BB%80%E4%B9%88%E7%89%88%E6%9D%83%E8%B6%8A%E6%9D%A5%E8%B6%8A%E8%A7%84%E7%9F%A9%EF%BC%8C%E6%AD%8C%E6%9B%B2%E5%8D%B4%E8%B6%8A%E6%9D%A5%E8%B6%8A%E4%B8%8D%E7%81%AB%E4%BA%86/"/>
+    <id>http://example.com/2025/01/26/%E4%B8%BA%E4%BB%80%E4%B9%88%E7%89%88%E6%9D%83%E8%B6%8A%E6%9D%A5%E8%B6%8A%E8%A7%84%E7%9F%A9%EF%BC%8C%E6%AD%8C%E6%9B%B2%E5%8D%B4%E8%B6%8A%E6%9D%A5%E8%B6%8A%E4%B8%8D%E7%81%AB%E4%BA%86/</id>
+    <published>2025-01-26T00:00:00.000Z</published>
+    <updated>2025-01-26T06:26:08.391Z</updated>
+    
+    <content type="html"><![CDATA[<p>自从歌曲的版权被保护的越来越好之后，歌手成名越来越难了。</p><p>现代社会贵的不是这些歌曲，而是每个人的注意力资源，所以保护版权对歌手并不是好事情，反而让自己的歌曲传唱开，去走穴，开演唱会是更好的模式。</p><p>互联网也是类似的模式，用户使用免费，广告收费最终是成功的模式。当进入AI时代后会如何呢？</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;自从歌曲的版权被保护的越来越好之后，歌手成名越来越难了。&lt;/p&gt;
+&lt;p&gt;现代社会贵的不是这些歌曲，而是每个人的注意力资源，所以保护版权对歌手并不是好事情，反而让自己的歌曲传唱开，去走穴，开演唱会是更好的模式。&lt;/p&gt;
+&lt;p&gt;互联网也是类似的模式，用户使用免费，广告收费最终是</summary>
+      
+    
+    
+    
+    <category term="说说" scheme="http://example.com/categories/%E8%AF%B4%E8%AF%B4/"/>
+    
+    
+  </entry>
+  
+</feed>
